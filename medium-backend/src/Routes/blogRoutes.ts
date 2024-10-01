@@ -1,5 +1,5 @@
 import { Hono, Context } from "hono";
-import { postBlog, updateBlog, deleteBlog, getAllBlogs, getaBlog, getUnpublishBlog, publishBlog } from "../controllers/blogController";
+import { postBlog, updateBlog, deleteBlog, getAllBlogs, getaBlog, getUnpublishBlog, publishBlog, searchBlog } from "../controllers/blogController";
 import protect from "../middleware/authMiddleware";
 
 
@@ -11,6 +11,7 @@ const blogRoute = new Hono<{
 }>();
 
 blogRoute.get("", getAllBlogs)
+blogRoute.get("/search", searchBlog);
 blogRoute.get("/get/:id", getaBlog)
 blogRoute.put("/publish", protect , publishBlog)
 blogRoute.get("/getPrivate", protect , getUnpublishBlog)

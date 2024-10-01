@@ -1,9 +1,14 @@
 import React from 'react'
 
-const QuoteComponent = () => {
+const QuoteComponent = ({ quote, author }: any) => {
   return (
-    <div className=' flex-1 text-center'>
-      Quote
+    <div className='text-center'>
+      <blockquote className='text-xl italic text-gray-200'>
+        "{quote}"
+      </blockquote>
+      <p className='mt-4 text-lg font-semibold text-gray-500'>
+        - {author}
+      </p>
     </div>
   )
 }

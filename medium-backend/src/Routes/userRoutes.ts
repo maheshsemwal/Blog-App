@@ -1,6 +1,6 @@
 import { Hono } from "hono";
 
-import { loginUser, signUpUser } from "../controllers/userController";
+import { checkUsername, loginUser, signUpUser } from "../controllers/userController";
 
 const userRoutes = new Hono<{
     Bindings: {
@@ -11,5 +11,6 @@ const userRoutes = new Hono<{
 
 userRoutes.post('/login', loginUser);
 userRoutes.post('/signup', signUpUser);
+userRoutes.get('/checkUser', checkUsername);
 
 export default userRoutes

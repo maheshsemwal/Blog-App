@@ -1,6 +1,7 @@
 import { Hono, Context } from 'hono'
 import userRoutes from './Routes/userRoutes';
 import blogRoute from './Routes/blogRoutes';
+import { cors } from 'hono/cors'
 
 interface CustomContext extends Context {
   user: any;
@@ -13,6 +14,7 @@ const app = new Hono<{
 	}
 }>();
 
+app.use('/*', cors())
 
 app.get('/', (c) => {
   return c.text('Hello Hono!')

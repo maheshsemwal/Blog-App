@@ -13,6 +13,36 @@ enum StatusCode {
     SERVERERR = 500,
 }
 
+export const checkUsername = async (c: Context) => {
+    const prisma = new PrismaClient({
+        datasourceUrl: c.env.DATABASE_URL,
+    }).$extends(withAccelerate())
+
+    try{
+        const username = c.req.query("username");
+        const user = await prisma.user.findFirst({
+            where: {
+                OR: [
+                    {
+                        username: username,
+                    }, {
+                        email: username
+                    }
+                ]
+            }
+        })
+
+        if(user){
+            return c.body("User already exist");
+        }
+
+        return c.body("User not found");
+
+    } catch (e) {
+        return c.body("Internal server error", StatusCode.SERVERERR);
+    }
+}
+
 export const loginUser = async (c: Context) => {
     const prisma = new PrismaClient({
         datasourceUrl: c.env.DATABASE_URL,
@@ -74,7 +104,6 @@ export const signUpUser = async (c: Context) => {
         username: string,
         email: string,
         password : string,
-        consfirmPassword : string,
         name : string
     } = await c.req.json();
 

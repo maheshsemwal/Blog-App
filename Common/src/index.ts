@@ -10,7 +10,6 @@ export const signupSchema = zod.object({
     username: zod.string(),
     email: zod.string().email(),
     password: zod.string().min(6),
-    confirmPassword: zod.string().min(6),
     name: zod.string().min(1),
 });
 

@@ -9,6 +9,48 @@ enum StatusCode {
     NOTPERMISSIOON = 403,
     SERVERERR = 500,
 }
+
+export const searchBlog = async (c: Context) => {
+    const prisma = new PrismaClient({
+        datasourceUrl: c.env.DATABASE_URL,
+    }).$extends(withAccelerate())
+
+    try{
+        const search = c.req.query("q");
+        const res = await prisma.post.findMany({
+            where: {
+                OR: [
+                    {
+                        title: {
+                            contains: search
+                        }
+                    },
+                    {
+                        content: {
+                            contains: search
+                        }
+                    }
+                ]
+            },
+            select : {
+                id: true,
+                createdAt: true,
+                updatedAt: true,
+                title: true,
+                content: true,
+                author: {
+                    select : {
+                        name: true,
+                    }
+                }
+            }
+        })
+
+        return c.json(res);
+    } catch (e) {
+        return c.body("Internal server error", StatusCode.SERVERERR);
+    }
+}
 const publishBlog = async(c: Context) => {
     const prisma = new PrismaClient({
         datasourceUrl: c.env.DATABASE_URL,
@@ -106,7 +148,7 @@ const getaBlog = async (c: Context) => {
     }
 
 }
-const getAllBlogs = async (c: Context) => {
+const   getAllBlogs = async (c: Context) => {
     const prisma = new PrismaClient({
         datasourceUrl: c.env.DATABASE_URL,
     }).$extends(withAccelerate())
@@ -120,9 +162,15 @@ const getAllBlogs = async (c: Context) => {
             },
             select: {
                 id: true,
+                createdAt: true,
+                updatedAt: true,
                 title: true,
                 content: true,
-                authorId: true,
+                author: {
+                    select : {
+                        name: true,
+                    }
+                }
             },
 
         })
