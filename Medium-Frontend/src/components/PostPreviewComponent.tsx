@@ -1,5 +1,5 @@
 
-import React, { memo } from 'react';
+import { memo } from 'react';
 import { useNavigate } from 'react-router-dom';
 // import { cn } from 'shadcn-utils'; // Adjust import based on your project setup
 interface Post {

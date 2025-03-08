@@ -1,18 +1,15 @@
 
 import { ModeToggle } from './mode-toggle'
 
-import { Button, buttonVariants } from './ui/button'
+import { Button } from './ui/button'
 import { SearchMenu } from './SearchMenu'
 import { SearchBar } from './SearchBar'
 
-
-import { loggedInUser } from '@/store/atom/atom';
-import { useRecoilValue } from 'recoil';
 import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuGroup, DropdownMenuItem, DropdownMenuPortal, DropdownMenuSub, DropdownMenuSubContent, DropdownMenuSubTrigger } from '@radix-ui/react-dropdown-menu'
 import { DropdownMenuShortcut } from './ui/dropdown-menu'
 
 const Navbar = () => {
-  const user = useRecoilValue(loggedInUser);
+  //const user = useRecoilValue(loggedInUser);
   // console.log(user)
   return (
 

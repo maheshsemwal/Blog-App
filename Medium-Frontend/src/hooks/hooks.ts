@@ -1,9 +1,9 @@
 import { toast } from "@/components/ui/use-toast";
 import { BACKEND_URL } from "@/config";
 import axios from "axios";
-import React from "react";
+
 import { useEffect, useState } from "react"
-import { useLocation } from "react-router-dom";
+
 interface Post {
     id: string
     postImage: string,

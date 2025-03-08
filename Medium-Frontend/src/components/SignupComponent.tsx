@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react'
 import { cn } from '@/lib/utils'
-import { Label } from '@radix-ui/react-dropdown-menu'
 import { Button } from './ui/button'
 import { Input } from "@/components/ui/input"
 import { Icons } from "@/components/ui/icons"
@@ -224,9 +223,9 @@ const SignupComponent = ({ className, ...props }: UserAuthFormProps) => {
                     {step === 1 && (
                         <>
                             <div className="grid gap-1">
-                                <Label htmlFor="email" className="sr-only">
+                                <label htmlFor="email" className="sr-only">
                                     Email
-                                </Label>
+                                </label>
                                 <Input
                                     id="email"
                                     placeholder="name@example.com"
@@ -255,9 +254,9 @@ const SignupComponent = ({ className, ...props }: UserAuthFormProps) => {
                     {step === 2 && (
                         <>
                             <div className="grid gap-1">
-                                <Label htmlFor="name" className="sr-only">
+                                <label htmlFor="name" className="sr-only">
                                     Name
-                                </Label>
+                                </label>
                                 <Input
                                     id="name"
                                     placeholder="Name"
@@ -271,9 +270,9 @@ const SignupComponent = ({ className, ...props }: UserAuthFormProps) => {
                                 />
                             </div>
                             <div className="grid gap-1">
-                                <Label htmlFor="username" className="sr-only">
+                                <label htmlFor="username" className="sr-only">
                                     Username
-                                </Label>
+                                </label>
                                 <Input
                                     id="username"
                                     placeholder="Username"
@@ -297,9 +296,9 @@ const SignupComponent = ({ className, ...props }: UserAuthFormProps) => {
                                 )}
                             </div>
                             <div className="grid gap-1">
-                                <Label htmlFor="password" className="sr-only">
+                                <label htmlFor="password" className="sr-only">
                                     Password
-                                </Label>
+                                </label>
                                 <Input
                                     id="password"
                                     placeholder="Password"
@@ -320,9 +319,9 @@ const SignupComponent = ({ className, ...props }: UserAuthFormProps) => {
                                     </div>)}
                             </div>
                             <div className="grid gap-1">
-                                <Label htmlFor="password" className="sr-only">
+                                <label htmlFor="password" className="sr-only">
                                     Password
-                                </Label>
+                                </label>
                                 <Input
                                     id="confirmPassword"
                                     placeholder="Confirm Password"

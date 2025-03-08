@@ -1,5 +1,4 @@
-import React from 'react'
-import Navbar from '@/components/Navbar'
+
 import SignupComponent from '@/components/SignupComponent'
 import QuoteComponent from '@/components/QuoteComponent'
 

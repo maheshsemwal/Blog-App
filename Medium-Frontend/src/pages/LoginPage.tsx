@@ -1,7 +1,5 @@
 import LoginComponent from '@/components/LoginComponent'
 import QuoteComponent from '@/components/QuoteComponent'
-import React from 'react'
-
 const LoginPage = () => {
   return (
     <>

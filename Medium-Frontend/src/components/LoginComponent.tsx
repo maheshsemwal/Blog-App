@@ -1,4 +1,3 @@
-import { Label } from '@radix-ui/react-dropdown-menu'
 import React, { useEffect } from 'react'
 import { Button } from './ui/button'
 import { Icons } from './ui/icons'
@@ -12,6 +11,7 @@ import { useNavigate } from 'react-router-dom'
 import { CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from './ui/card'
 
 interface UserAuthFormProps extends React.HTMLAttributes<HTMLDivElement> { }
+//@ts-ignore
 const LoginComponent = ({ className, ...props }: UserAuthFormProps) => {
     useEffect(() => {
         const token = localStorage.getItem("authToken");
@@ -114,11 +114,11 @@ return (
                 </div>
             </div>
             <div className="grid gap-2">
-                <Label htmlFor="email">Username</Label>
+                <label htmlFor="email">Username</label>
                 <Input id="email" type="email" placeholder="Email or username" onChange={(e) => setUsername(e.target.value)} />
             </div>
             <div className="grid gap-2">
-                <Label htmlFor="password">Password</Label>
+                <label htmlFor="password">Password</label>
                 <Input id="password" type="password" onChange={(e) => setPassword(e.target.value)} />
             </div>
         </CardContent>

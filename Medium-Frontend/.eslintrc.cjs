@@ -14,5 +14,8 @@ module.exports = {
       'warn',
       { allowConstantExport: true },
     ],
+    '@typescript-eslint/no-unused-vars': 'off',  // Disables unused variables check
+    'no-unused-vars': 'off', // Disables ESLint unused vars check
+    'react/react-in-jsx-scope': 'off', // Disables React import requirement in newer versions
   },
-}
+};

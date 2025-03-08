@@ -1,4 +1,4 @@
-import React, { useCallback, useRef } from 'react';
+import { useCallback, useRef } from 'react';
 import { SearchIcon } from "lucide-react";
 import { Input } from "./ui/input";
 import { useRecoilState } from "recoil";

@@ -1,6 +1,5 @@
 
 import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuGroup, DropdownMenuItem } from '@radix-ui/react-dropdown-menu'
-import React from 'react'
 import { Button } from './ui/button'
 import { DropdownMenuShortcut } from './ui/dropdown-menu'
 import AvatarComponent from './AvatarComponent'

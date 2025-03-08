@@ -3,7 +3,7 @@ export const loggedInUser = atom({
     key : 'loggedInUser',
     default : selector({
         key : 'loggedInUserSelector',
-        get : ({get}) => {
+        get : ({}) => {
             const user = JSON.parse(localStorage.getItem('user') as string)
             if(!user)
                 return {}
