@@ -1,4 +1,3 @@
-import React from 'react'
 import {
   Avatar,
   AvatarFallback,
@@ -6,6 +5,7 @@ import {
 } from "@/components/ui/avatar";
 
 interface userNameProps {
+  //@ts-ignore
   userName: any
 }
 const AvatarComponent = ({userName}: userNameProps) => {

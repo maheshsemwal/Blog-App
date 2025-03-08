@@ -1,4 +1,3 @@
-import { cn } from '@/lib/utils'
 import { Label } from '@radix-ui/react-dropdown-menu'
 import React, { useEffect } from 'react'
 import { Button } from './ui/button'
@@ -10,7 +9,7 @@ import { BACKEND_URL } from '@/config'
 import { loginSchema } from '@maheshsemwal/common'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from './ui/card'
+import { CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from './ui/card'
 
 interface UserAuthFormProps extends React.HTMLAttributes<HTMLDivElement> { }
 const LoginComponent = ({ className, ...props }: UserAuthFormProps) => {
